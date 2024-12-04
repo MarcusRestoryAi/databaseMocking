@@ -1,6 +1,7 @@
 //Fil för att hantera Express server
 const express = require("express")
 const bodyParser = require("body-parser")
+const syncDatabase = require('./dbSync');
 
 const portNr = 5000
 
@@ -12,7 +13,9 @@ application.use(bodyParser.json())
 application.use(bodyParser.urlencoded({extended:false}))
 
 //Starta upp server
-application.listen(portNr, () => {
+application.listen(portNr, async () => {
+  await syncDatabase(); // För att synka databasen med vår modell
+
   console.log(`Nu ligger servern på portNr ${portNr} och lyssnar efter inkommande requests`)
 })
 
