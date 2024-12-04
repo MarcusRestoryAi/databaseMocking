@@ -4,23 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Index</title>
-  <script src="script.js" defer></script>
+  <script src="/script" defer></script>
 </head>
 <body>
   <h1>Databas</h1>
 
   <div>
-    <div>
-      <label for="name">Skriv ditt namn:</label>
-      <input type="text" name="name" id="name">
-    </div>
-    <div>
-      <label for="email">Skriv din ålder:</label>
-      <input type="email" name="email" id="email">
-    </div>
-    <button id="btnSend">Skicka iväg data</button>
+    <form action="addUser" method="post">
+      <div>
+        <label for="name">Skriv ditt namn:</label>
+        <input type="text" name="name" id="name">
+      </div>
+      <div>
+        <label for="email">Skriv din epost:</label>
+        <input type="email" name="email" id="email">
+      </div>
+      <button type="submit">Skicka iväg data</button>
+    </form>
   </div>
 
-  <div id="newUserOutput"></div>
+  <div id="usersOutput"></div>
 </body>
 </html>
