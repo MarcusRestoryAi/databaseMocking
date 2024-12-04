@@ -3,7 +3,7 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const syncDatabase = require('./dbSync');
 
-const portNr = 5000
+const portNr = 8080
 
 const { createUser, getAllUsers } = require('./dbService');
 
