@@ -24,6 +24,11 @@ application.get("", (req, res) => {
   res.sendFile("./index.html", {root: __dirname})
 })
 
+//Get request för Index
+application.get("/getMessage", (req, res) => {
+  res.send("Hello user!")
+})
+
 //Get handler för script.js fil
 application.get("/script", (req, res) => {
   res.sendFile("./script.js", {root: __dirname})
